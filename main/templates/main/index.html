@@ -1,0 +1,28 @@
+{% extends "main/base.html" %}
+{% load static %}
+{% block content %}
+<title>Haokai's Home Page</title>
+<div class="banner">
+  {% if user_profile.avatar %}
+  <img
+    class="avatar-image"
+    src="{{ user_profile.avatar.url }}"
+    alt="{{ user_profile.first_name }}'s avatar"
+  />
+  {% endif %}
+  <div class="text-content">
+    <h1>
+      I'm {{ user_profile.first_name }} {{ user_profile.last_name }}, a
+      {{ user_profile.title }}
+    </h1>
+    <br>
+    <p>{{ user_profile.bio }}</p>
+    <br>
+    {% if user_profile.cv %}
+    <div class="download-button-div">
+      <a class="download-button" href="{{ user_profile.cv.url }}">Download CV</a>
+    </div>
+    {% endif %}
+  </div>
+</div>
+{% endblock %}
