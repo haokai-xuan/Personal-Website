@@ -1,0 +1,94 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="{% static 'css/styles.css' %}" />
+  <style>
+    @import url("https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+  </style>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+    integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="icon" type="image/x-icon" href="{% static 'images/HX.png' %}" />
+</head>
+
+<body>
+  <nav>
+    <ul class="sidebar">
+      <li class="js-sidebar-x">
+        <a href="#"><svg class="svg-x" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960"
+            width="24px" fill="#d3d3d3">
+            <path
+              d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z" />
+          </svg></a>
+      </li>
+      <li>
+        <a href="{% url 'home' %}">Home</a>
+      </li>
+      <li>
+        <a href="{% url 'projects_list' %}">Projects</a>
+      </li>
+      <li>
+        <a href="{% url 'blogs_list' %}">Blog</a>
+      </li>
+      <li>
+        <a href="{% url 'contact' %}">Contact</a>
+      </li>
+    </ul>
+    <ul>
+      <li>
+        <a href="{% url 'home' %}"><img class="logo" src="{% static 'images/HX.png' %}" alt="logo" /></a>
+      </li>
+      <li class="hide-on-mobile">
+        <a href="{% url 'home' %}">Home</a>
+      </li>
+      <li class="hide-on-mobile">
+        <a href="{% url 'projects_list' %}">Projects</a>
+      </li>
+      <li class="hide-on-mobile">
+        <a href="{% url 'blogs_list' %}">Blog</a>
+      </li>
+      <li class="hide-on-mobile">
+        <a href="{% url 'contact' %}">Contact</a>
+      </li>
+      <li class="js-sidebar menu-button">
+        <a href=""><svg class="svg-list" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960"
+            width="24px" fill="#d3d3d3">
+            <path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z" />
+          </svg></a>
+      </li>
+    </ul>
+  </nav>
+  {% block content %}
+  <!-- Child templates will render content here -->
+  {% endblock %}
+  <footer>
+    <div class="footer-container">
+      <div class="social-icons">
+        <a href="https://github.com/haokai-xuan" target="_blank"><i class="fa-brands fa-github"></i></a>
+        <a href="https://www.linkedin.com/in/haokai-xuan-15a073311/"><i class="fa-brands fa-linkedin"></i></a>
+        <a href="https://www.instagram.com/the_real_haokai/"><i class="fa-brands fa-instagram"></i></a>
+        <a href="https://www.youtube.com/@haokaixuan"><i class="fa-brands fa-youtube"></i></a>
+        <a href="https://www.facebook.com/haokai.xuan.9/"><i class="fa-brands fa-facebook"></i></a>
+      </div>
+      <div class="footer-nav">
+        <ul>
+          <li><a href="{% url 'home'%}">Home</a></li>
+          <li><a href="{% url 'projects_list'%}">Projects</a></li>
+          <li><a href="{% url 'blogs_list'%}">Blog</a></li>
+          <li><a href="{% url 'contact'%}">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>Copyright &copy;2024</p>
+    </div>
+  </footer>
+</body>
+<script src="{% static 'js/main.js' %}"></script>
+
+</html>

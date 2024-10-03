@@ -1,0 +1,26 @@
+{% extends 'main/base.html' %} {% load static %} {% block content %}
+<title>Haokai's Blogs</title>
+<div class="posts-container">
+  <h1>Blogs</h1>
+  {% for blog in blogs %}
+  {% if blog.is_active %}
+  <a href="{% url 'blog_detail' blog.slug %}">
+    <div class="card">
+      <img src="{{ blog.image.url }}" />
+      <div class="post-content-container">
+        <h3><b>{{ blog.title }}</b></h3>
+        <hr>
+        <p>{{ blog.description }}</p>
+        <p class="date">{{ blog.date|date:"F j, Y" }}</p>
+        <div class="tags">
+          {% for tag in blog.tags.all %}
+          <span>{{ tag.name }}</span>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </a>
+  {% endif %}
+  {% endfor %}
+</div>
+{% endblock %}
