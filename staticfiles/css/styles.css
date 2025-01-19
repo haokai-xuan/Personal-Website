@@ -5,6 +5,11 @@
   box-sizing: border-box;
 }
 
+ul, ol {
+  padding-left: 40px; /* Restore default padding */
+  margin-left: 0;
+}
+
 body {
   background-color: #1e1e1e;
   color: #d3d3d3;
@@ -31,6 +36,8 @@ nav ul {
   display: flex;
   justify-content: flex-end;
   align-items: center;
+  padding: 0;
+  margin-left: 0;
 }
 
 nav li {
@@ -176,6 +183,8 @@ footer {
   display: flex;
   justify-content: center;
   list-style-type: none;
+  padding: 0;
+  margin-left: 0;
 }
 
 .footer-nav ul li a {
@@ -184,10 +193,14 @@ footer {
   text-decoration: none;
   font-size: 1em;
   transition: all 0.5s ease;
+  padding: 0;
+  margin-left: 0;
 }
 
 .footer-nav ul li a:hover {
   color: rgba(0, 136, 169, 1);
+  padding: 0;
+  margin-left: 0;
 }
 
 .footer-bottom {
