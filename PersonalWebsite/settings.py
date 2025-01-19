@@ -44,8 +44,8 @@ INSTALLED_APPS = [
 
 CKEDITOR_CONFIGS = {
     'default': {
-        'toolbar': 'Custom',
-        'height': 400,
+        'toolbar': 'full',
+        'height': 600,
         'width': '100%',
         'toolbar_Custom': [
             ['Bold', 'Italic', 'Underline', 'Link', 'Unlink'],
@@ -55,7 +55,7 @@ CKEDITOR_CONFIGS = {
             ['Source'],
         ],
         'extraAllowedContent': 'iframe[*]',  # Allow iframes
-        'extraPlugins': 'embed,autoembed,iframe',  # Enable embed, iframe plugins
+        'extraPlugins': 'codesnippet,embed,autoembed,iframe',  # Enable embed, iframe plugins, codesnippet
     }
 }
 
