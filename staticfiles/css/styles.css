@@ -20,8 +20,11 @@ body {
 }
 
 a {
-  color: #d3d3d3;
-  text-decoration: none;
+  color: rgba(0, 136, 169, 1);
+}
+
+a:hover {
+  color: rgba(0, 136, 169, 0.8);
 }
 
 /*Navbar*/
@@ -51,6 +54,8 @@ nav a {
   align-items: center;
   transition: all 0.3s ease;
   font-size: 20px;
+  color: #d3d3d3;
+  text-decoration: none;
 }
 
 nav a:hover {
@@ -101,10 +106,13 @@ nav li:first-child {
   border-radius: 5px;
   text-decoration: none;
   transition: all 0.3s ease;
+  color: #d3d3d3;
+  text-decoration: none;
 }
 
 .download-button:hover {
   background-color: rgba(0, 136, 169, 0.8);
+  color: #d3d3d3;
 }
 
 .download-button-div {
@@ -323,6 +331,11 @@ footer {
   max-width: 100vh;
   margin: 0 auto;
   padding: 20px;
+}
+
+.posts-container a {
+  color: #d3d3d3;
+  text-decoration: none;
 }
 
 .card-content-container h1 {
