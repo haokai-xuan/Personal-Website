@@ -328,8 +328,7 @@ footer {
   display: flex;
   flex-direction: column;
   gap: 20px;
-
-  width: 60%;
+  width: 100vh;
   margin: 0 auto;
   padding: 20px;
 }
