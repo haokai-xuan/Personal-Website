@@ -328,7 +328,8 @@ footer {
   display: flex;
   flex-direction: column;
   gap: 20px;
-  max-width: 100vh;
+
+  width: 60%;
   margin: 0 auto;
   padding: 20px;
 }
@@ -367,7 +368,7 @@ footer {
 }
 
 .card:hover {
-  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+  box-shadow: 0 8px 16px 0 rgba(255, 255, 255, 0.2);
 }
 
 .card .post-content-container {
@@ -376,6 +377,7 @@ footer {
   flex-direction: column;
   justify-content: flex-start;
   height: 100%;
+  background-color: rgb(0, 0, 0);
 }
 
 .card h3 {
