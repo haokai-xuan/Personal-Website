@@ -28,6 +28,7 @@ DEBUG = False
 
 ALLOWED_HOSTS = ['*']
 
+SECURE_REFERRER_POLICY = "no-referrer-when-downgrade"
 
 # Application definition
 
