@@ -11,10 +11,20 @@
   />
   {% endif %}
   <div class="text-content">
-    <h1>
-      I'm {{ user_profile.first_name }} {{ user_profile.last_name }}, a
-      {{ user_profile.title }}
-    </h1>
+    <div class="text-anim-container">
+      <h3 class="home-greeting">Hi I'm</h3>
+    </div>
+    <br>
+    <div class="text-anim-container">
+      <h1 class="home-name">
+        {{ user_profile.first_name }} {{ user_profile.last_name }}
+      </h1>
+    </div>
+    <br>
+    <div class="text-anim-container">
+      <h2 class="home-job">{{ user_profile.title }}</h2>
+    </div>
+    <br>
     <br>
     <p>{{ user_profile.bio }}</p>
     <br>
