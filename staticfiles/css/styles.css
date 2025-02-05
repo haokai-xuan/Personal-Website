@@ -126,7 +126,7 @@ nav li:first-child {
   overflow: hidden;
   width: 0;
   border-right: 2px solid transparent;
-  animation: typing 1.92s steps(23) forwards, cursor 1s step-end infinite;
+  animation: typing 2s steps(24) forwards, cursor 1s step-end infinite;
   animation-delay: 1.42s;
 }
 
