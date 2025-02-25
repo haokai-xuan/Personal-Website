@@ -56,7 +56,7 @@ CKEDITOR_CONFIGS = {
             ['Source'],
         ],
         'extraAllowedContent': 'iframe[*]',  # Allow iframes
-        'extraPlugins': 'codesnippet,embed,autoembed,iframe',  # Enable embed, iframe plugins, codesnippet
+        'extraPlugins': 'codesnippet,embed,autoembed,iframe,image2',  # Enable embed, iframe plugins, codesnippet
     }
 }
 
