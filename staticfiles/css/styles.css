@@ -197,6 +197,21 @@ nav li:first-child {
   flex-grow: 1;
 }
 
+.section {
+  text-align: center;
+  margin-top: 60px;
+  margin-bottom: 30px;
+  padding: 0 10px;
+}
+
+.section-content {
+  max-width: calc(100% - 20px);
+  width: auto;
+  height: auto;
+  border-radius: 10px;
+  object-fit: contain;
+}
+
 /*Footer Styles*/
 footer {
   background-color: #111;
