@@ -1,7 +1,5 @@
 from django.shortcuts import render, get_object_or_404
 from .models import UserProfile, Project, Blog, Visitor
-from hitcount.views import HitCountMixin
-from hitcount.models import HitCount
 from django.db.models import Q
 # Create your views here.
 
@@ -40,8 +38,6 @@ def project_list_view(request):
 
 def project_details_view(request, slug):
     project = get_object_or_404(Project, slug=slug)
-    hit_count = HitCount.objects.get_for_object(project)
-    hit_count_response = HitCountMixin.hit_count(request, hit_count)
 
     return render(request, 'main/project_detail.html', {'project': project})
 
@@ -53,8 +49,6 @@ def blogs_list_view(request):
 
 def blog_details_view(request, slug):
     blog = get_object_or_404(Blog, slug=slug)
-    hit_count = HitCount.objects.get_for_object(blog)
-    hit_count_response = HitCountMixin.hit_count(request, hit_count)
 
     return render(request, 'main/blog_detail.html', {'blog': blog})
 
