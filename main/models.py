@@ -2,6 +2,7 @@ from django.db import models
 from django.contrib.auth.models import User
 from ckeditor.fields import RichTextField
 from django.utils.text import slugify
+from hitcount.models import HitCountMixin
 # Create your models here.
 
 
@@ -25,7 +26,7 @@ class Tag(models.Model):
         return self.name
 
 
-class Project(models.Model):
+class Project(HitCountMixin, models.Model):
     title = models.CharField(max_length=200)
     slug = models.SlugField(unique=True, max_length=200)
     image = models.ImageField(upload_to='images/')
@@ -55,7 +56,7 @@ class MediaFile(models.Model):
         return self.name
 
 
-class Blog(models.Model):
+class Blog(HitCountMixin, models.Model):
     title = models.CharField(max_length=200)
     slug = models.SlugField(unique=True, max_length=200)
     image = models.ImageField(upload_to='images/')
@@ -74,3 +75,9 @@ class Blog(models.Model):
 
     def __str__(self):
         return self.title
+
+
+class Visitor(models.Model):
+    visitor = models.TextField(default=None)
+    def __str__(self):
+        return self.visitor
