@@ -30,3 +30,6 @@ def blogs_list_view(request):
 def blog_details_view(request, slug):
     blog = get_object_or_404(Blog, slug=slug)
     return render(request, 'main/blog_detail.html', {'blog': blog})
+
+def handle_404(request, exception):
+    return render(request, "main/404.html", {})
