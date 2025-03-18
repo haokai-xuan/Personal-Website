@@ -10,6 +10,7 @@
       <div class="post-content-container">
         <h3><b>{{ blog.title }}</b></h3>
         <hr>
+        <p class="fa fa-eye"> {{ blog.hit_count.hits }}</p>
         <p>{{ blog.description }}</p>
         <p class="date">{{ blog.date|date:"F j, Y" }}</p>
         <div class="tags">

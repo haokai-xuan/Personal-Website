@@ -5,6 +5,9 @@
   <br>
   <p>{{ project.date|date:"F j, Y" }}</p>
   <br>
+  <p class="fa fa-eye"> {{ project.hit_count.hits }}</p>
+  <br>
+  <br>
   <div class="tags">
     {% for tag in project.tags.all %}
       <span>{{ tag.name }}</span>
