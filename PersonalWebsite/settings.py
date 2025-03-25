@@ -24,7 +24,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-$ztox786v*v48^5&@1j^vbx)xu3o6@^bnt$q(d1&4q!z(k&k_6'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
@@ -46,6 +46,7 @@ INSTALLED_APPS = [
 CKEDITOR_CONFIGS = {
     'default': {
         'toolbar': 'full',
+        'allowedContent': True,
         'height': 600,
         'width': '100%',
         'toolbar_Custom': [
@@ -55,7 +56,7 @@ CKEDITOR_CONFIGS = {
             ['Cut', 'Copy', 'Paste', 'Undo', 'Redo'],
             ['Source'],
         ],
-        'extraAllowedContent': 'iframe[*]',  # Allow iframes
+        'extraAllowedContent': 'iframe[*]; div(*){*}; span(*){*}; p(*){*}; a(*){*}',  # Allow iframes
         'extraPlugins': 'codesnippet,embed,autoembed,iframe,image2',  # Enable embed, iframe plugins, codesnippet
     }
 }

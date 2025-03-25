@@ -26,11 +26,14 @@
     </div>
     <br>
     <br>
-    <p>{{ user_profile.bio }}</p>
+    <br>
+    <div class="bio">
+      <p>{{ user_profile.bio|safe }}</p>
+    </div>
     <br>
     {% if user_profile.cv %}
     <div class="download-button-div">
-      <a class="download-button" href="{{ user_profile.cv.url }}">Download CV</a>
+      <a class="download-button" href="{{ user_profile.cv.url }}">Resume</a>
     </div>
     {% endif %}
   </div>

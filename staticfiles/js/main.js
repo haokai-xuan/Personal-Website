@@ -43,3 +43,21 @@ function closeSidebar() {
   const sidebar = document.querySelector('.sidebar');
   sidebar.style.display = 'none';
 }
+
+const current_year = document.querySelector(".js-current-year");
+current_year.innerHTML = new Date().getFullYear();
+
+document.addEventListener("DOMContentLoaded", () => {
+  const cards = document.querySelectorAll(".card");
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("visible");
+        observer.unobserve(entry.target);
+      }
+    })
+  }, {threshold: 0.4});
+
+  cards.forEach(card => observer.observe(card));
+});

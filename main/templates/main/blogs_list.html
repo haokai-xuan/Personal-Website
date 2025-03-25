@@ -4,7 +4,7 @@
   <h1>Blogs</h1>
   {% for blog in blogs %}
   {% if blog.is_active %}
-  <a href="{% url 'blog_detail' blog.slug %}">
+  <a class="card-wrapper" href="{% url 'blog_detail' blog.slug %}">
     <div class="card">
       <img src="{{ blog.image.url }}" />
       <div class="post-content-container">
