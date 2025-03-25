@@ -10,7 +10,7 @@ class UserProfile(models.Model):
     first_name = models.CharField(max_length=30)
     last_name = models.CharField(max_length=30)
     cv = models.FileField(upload_to='cvs/')
-    bio = models.TextField(blank=True)
+    bio = RichTextField()
     title = models.CharField(max_length=100, blank=True)
     avatar = models.ImageField(upload_to='avatars/', blank=True)
 

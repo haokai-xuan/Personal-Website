@@ -4,20 +4,20 @@
 <h1>Projects</h1>
 {% for project in projects %}
   {% if project.is_active %}
-    <a href="{% url 'project_detail' project.slug %}">
+    <a class="card-wrapper" href="{% url 'project_detail' project.slug %}">
       <div class="card">
-          <img src="{{ project.image.url }}"/>
-          <div class="post-content-container">
-            <h3><b>{{ project.title }}</b></h3>
-            <hr>
-            <p>{{ project.description }}</p>
-            <p class="date">{{ project.date|date:"F j, Y" }}</p>
-            <div class="tags">
-              {% for tag in project.tags.all %}
-                <span>{{ tag.name }}</span>
-              {% endfor %}
-            </div>
+        <img src="{{ project.image.url }}"/>
+        <div class="post-content-container">
+          <h3><b>{{ project.title }}</b></h3>
+          <hr>
+          <p>{{ project.description }}</p>
+          <p class="date">{{ project.date|date:"F j, Y" }}</p>
+          <div class="tags">
+            {% for tag in project.tags.all %}
+              <span>{{ tag.name }}</span>
+            {% endfor %}
           </div>
+        </div>
       </div>
     </a>
   {% endif %}
