@@ -2,7 +2,7 @@
 <title>Haokai's Projects</title>
 <div class="posts-container">
   <h1>Projects</h1>
-  <br/>
+  <span style="white-space: pre-line"></span>
   {% for project in projects %}
     {% if project.is_active %}
       <a class="card-wrapper" href="{% url 'project_detail' project.slug %}">
