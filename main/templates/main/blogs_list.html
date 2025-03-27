@@ -2,7 +2,7 @@
 <title>Haokai's Blogs</title>
 <div class="posts-container">
   <h1>Blogs</h1>
-  <br>
+  <span style="white-space: pre-line"></span>
   {% for blog in blogs %}
     {% if blog.is_active %}
       <a class="card-wrapper" href="{% url 'blog_detail' blog.slug %}">
