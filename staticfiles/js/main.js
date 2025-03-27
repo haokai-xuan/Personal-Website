@@ -2,6 +2,7 @@ document.querySelector('.js-sidebar').addEventListener('click', (event) => {
   event.preventDefault();
   const sidebar = document.querySelector('.sidebar');
   sidebar.style.display = 'flex';
+  sidebar.classList.add('visible');
 
   // propagation to prevent immediate closing
   event.stopPropagation();
@@ -41,7 +42,12 @@ document.addEventListener('click', function (e) {
 
 function closeSidebar() {
   const sidebar = document.querySelector('.sidebar');
-  sidebar.style.display = 'none';
+  sidebar.classList.remove('visible');
+  sidebar.classList.add('closing');
+  setTimeout(() => {
+    sidebar.style.display = 'none';
+    sidebar.classList.remove('closing');
+  }, 500);
 }
 
 const current_year = document.querySelector(".js-current-year");
