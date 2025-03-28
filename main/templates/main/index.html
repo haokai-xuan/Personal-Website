@@ -3,13 +3,6 @@
 {% block content %}
 <title>Haokai's Home Page</title>
 <div class="banner">
-  {% if user_profile.avatar %}
-  <img
-    class="avatar-image"
-    src="{{ user_profile.avatar.url }}"
-    alt="{{ user_profile.first_name }}'s avatar"
-  />
-  {% endif %}
   <div class="text-content">
     <div class="text-anim-container">
       <h3 class="home-greeting">Hi I'm</h3>
@@ -37,6 +30,13 @@
     </div>
     {% endif %}
   </div>
+  {% if user_profile.avatar %}
+  <img
+    class="avatar-image"
+    src="{{ user_profile.avatar.url }}"
+    alt="{{ user_profile.first_name }}'s avatar"
+  />
+  {% endif %}
 </div>
 <div class="section">
   <img class="section-content" src="https://github-readme-stats-git-master-haokai-xuans-projects.vercel.app/api?username=haokai-xuan&show_icons=true&theme=shadow_blue" />
