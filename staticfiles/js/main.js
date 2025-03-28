@@ -1,8 +1,10 @@
 document.querySelector('.js-sidebar').addEventListener('click', (event) => {
   event.preventDefault();
   const sidebar = document.querySelector('.sidebar');
+  const menuButton = document.querySelector('.menu-button');
   sidebar.style.display = 'flex';
   sidebar.classList.add('visible');
+  menuButton.style.display = 'none';
 
   // propagation to prevent immediate closing
   event.stopPropagation();
@@ -42,8 +44,10 @@ document.addEventListener('click', function (e) {
 
 function closeSidebar() {
   const sidebar = document.querySelector('.sidebar');
+  const menuButton = document.querySelector('.menu-button');
   sidebar.classList.remove('visible');
   sidebar.classList.add('closing');
+  menuButton.style.display = 'block';
   setTimeout(() => {
     sidebar.style.display = 'none';
     sidebar.classList.remove('closing');
