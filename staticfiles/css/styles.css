@@ -86,6 +86,7 @@ nav li:first-child {
 .sidebar.visible {
   display: flex;
   animation: fly-left 0.3s ease-out forwards;
+  will-change: opacity, transform;
 }
 
 @keyframes close-sidebar {
@@ -197,6 +198,7 @@ nav li:first-child {
   color: #d3d3d3;
   text-decoration: none;
   animation: fade-in 1.5s ease-out forwards;
+  will-change: opacity, transform;
   display: inline-block;
 }
 
@@ -252,10 +254,12 @@ nav li:first-child {
   border-width: 8px;
   border-color: #363636;
   animation: fly-left 1.5s ease-out forwards;
+  will-change: opacity, transform;
 }
 
 .bio {
   animation: fly-right 1.5s ease-out forwards;
+  will-change: opacity, transform;
 }
 
 .text-content {
@@ -401,6 +405,7 @@ footer {
   display: flex;
   align-items: center;
   justify-content: space-evenly;
+  will-change: opacity, transform;
   animation: fade-in 1.5s ease-in-out forwards;
 }
 
@@ -576,6 +581,7 @@ footer {
 
 .visible {
   animation: fade-in 1.5s ease-in-out forwards;
+  will-change: opacity, transform;
   pointer-events: auto;
 }
 
@@ -657,6 +663,7 @@ footer {
   word-wrap: break-word;
   overflow-wrap: break-word;
   animation: fade-in-z 1.5s ease-out forwards;
+  will-change: opacity, transform;
 }
 
 .post-detail-container img {

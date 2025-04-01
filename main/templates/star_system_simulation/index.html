@@ -1,0 +1,22 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Star System Simulation</title>
+  <script type="module" crossorigin src="{% static 'js/star_system_simulation.js' %}"></script>
+  <link rel="stylesheet" crossorigin href="{% static 'css/star_system_simulation.css' %}">
+</head>
+<body>
+    <div id="settings">
+        Set viewing latitude:<br>
+        (degrees +90 to -90)<br>
+        <input type="number" id="lat" step="0.1" min="-90" max="90" value="43">
+        <button id="set-lat" class="blue-button">set</button><br>
+        <br>
+        Rotation speed:<br>
+        <input type="range" id="rot-speed" step="0.00001" min="0" max="0.005" value="0.00015">
+    </div>
+</body>
+</html>

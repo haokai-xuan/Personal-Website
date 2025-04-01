@@ -55,3 +55,7 @@ def blog_details_view(request, slug):
 
 def handle_404(request, exception):
     return render(request, "main/404.html", {})
+
+
+def star_system_simulation_view(request):
+    return render(request, "star_system_simulation/index.html")
