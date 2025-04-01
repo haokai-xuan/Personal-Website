@@ -1,0 +1,1 @@
+body{margin:0}div#settings{position:fixed;right:5px;bottom:5px;z-index:9;padding:.8em;border-radius:15px;background-color:#d3d3d3}input#lat{border-radius:5px}input#rot-speed{accent-color:rgba(0,136,169,1)}button{background-color:#0088a9;border-radius:5px;text-decoration:none;color:#d3d3d3}button:hover{background-color:#0088a9cc}
