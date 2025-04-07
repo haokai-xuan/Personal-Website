@@ -71,3 +71,24 @@ document.addEventListener("DOMContentLoaded", () => {
 
   cards.forEach(card => observer.observe(card));
 });
+
+document.addEventListener("DOMContentLoaded", function () {
+  const isProjectPage = window.location.pathname.startsWith("/projects/");
+  const isBlogPage = window.location.pathname.startsWith("/blogs/");
+  
+  if (isProjectPage || isBlogPage) {
+    document.querySelectorAll("img:not(.no-lightbox)").forEach((img, index) => {
+      // Skip if already wrapped in a lightbox anchor
+      if (img.closest("a[data-lightbox]")) return;
+
+      const link = document.createElement("a");
+      link.href = img.src;
+      link.setAttribute("data-lightbox", "auto-gallery");
+      link.setAttribute("data-title", img.alt || `Image ${index + 1}`);
+
+      img.parentNode.insertBefore(link, img);
+      link.appendChild(img);
+    });
+  }
+});
+

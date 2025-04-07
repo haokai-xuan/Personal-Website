@@ -7,7 +7,7 @@
     {% if blog.is_active %}
       <a class="card-wrapper" href="{% url 'blog_detail' blog.slug %}">
         <div class="card">
-          <img src="{{ blog.image.url }}" />
+          <img class="no-lightbox" src="{{ blog.image.url }}" />
           <div class="post-content-container">
             <h3><b>{{ blog.title }}</b></h3>
             <hr>

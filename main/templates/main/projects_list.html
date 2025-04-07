@@ -7,7 +7,7 @@
     {% if project.is_active %}
       <a class="card-wrapper" href="{% url 'project_detail' project.slug %}">
         <div class="card">
-          <img src="{{ project.image.url }}"/>
+          <img class="no-lightbox" src="{{ project.image.url }}"/>
           <div class="post-content-container">
             <h3><b>{{ project.title }}</b></h3>
             <hr>
