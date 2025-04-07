@@ -7,6 +7,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="{% static 'css/styles.css' %}" />
+  <link href="{% static 'css/lightbox.css' %}" rel="stylesheet" />
   <style>
     @import url("https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&display=swap");
   </style>
@@ -44,7 +45,7 @@
     </ul>
     <ul>
       <li>
-        <a href="{% url 'home' %}"><img class="logo" src="{% static 'images/HX.png' %}" alt="logo" /></a>
+        <a href="{% url 'home' %}"><img class="no-lightbox logo" src="{% static 'images/HX.png' %}" alt="logo" /></a>
       </li>
       <li class="hide-on-mobile">
         <a href="{% url 'home' %}">Home</a>
@@ -90,7 +91,7 @@
       <div class="webring">
         <a href="https://cs.uwatering.com/#https://www.haokai-xuan.com?nav=prev"><i class="webring-arrow fa fa-arrow-left"></i></a>
         <a href="https://cs.uwatering.com/#https://www.haokai-xuan.com" target="_blank">
-            <img class="webring-logo" src="https://cs.uwatering.com/icon.white.svg" alt="CS Webring" style="width: 24px; height: auto; opacity: 0.8;"/>
+            <img class="no-lightbox webring-logo" src="https://cs.uwatering.com/icon.white.svg" alt="CS Webring" style="width: 24px; height: auto; opacity: 0.8;"/>
         </a>
         <a href="https://cs.uwatering.com/#https://www.haokai-xuan.com?nav=next"><i class="webring-arrow fa fa-arrow-right"></i></a>
       </div>
@@ -101,5 +102,5 @@
   </footer>
 </body>
 <script src="{% static 'js/main.js' %}"></script>
-
+<script src="{% static 'js/lightbox-plus-jquery.js' %}"></script>
 </html>
