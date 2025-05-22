@@ -1,20 +1,38 @@
-{% extends 'main/base.html' %} {% load static %} {% block content %}
+{% extends 'main/base.html' %}
+{% load static %}
+
+{% block meta %}
+  <meta name="description" content="{{ project.description|striptags|truncatechars:155 }}">
+  <meta property="og:title" content="{{ project.title }}">
+  <meta property="og:description" content="{{ project.description|striptags|truncatechars:155 }}">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="{{ request.build_absolute_uri }}">
+  <meta name="robots" content="index, follow">
+{% endblock %}
+
+{% block content %}
 <title>Projects - {{ project.title }}</title>
-<div class="post-detail-container">
-  <h1>{{ project.title }}</h1>
-  <br>
-  <p>{{ project.date|date:"F j, Y" }}</p>
-  <br>
-  <div class="tags">
-    {% for tag in project.tags.all %}
-      <span>{{ tag.name }}</span>
-    {% endfor %}
-  </div>
-  <br>
-  <hr>
-  <br>
-  <div>
+
+<article class="post-detail-container">
+  <header>
+    <h1 class="post-title">{{ project.title }}</h1>
+    <br>
+    <p>
+      <time datetime="{{ project.date|date:'Y-m-d' }}">{{ project.date|date:"F j, Y" }}</time>
+    </p>
+    <br>
+    <div class="tags">
+      {% for tag in project.tags.all %}
+        <span>{{ tag.name }}</span>
+      {% endfor %}
+    </div>
+    <br>
+    <hr>
+    <br>
+  </header>
+
+  <section>
     {{ project.content|safe }}
-  </div>
-</div>
+  </section>
+</article>
 {% endblock %}
