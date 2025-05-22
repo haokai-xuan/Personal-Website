@@ -130,7 +130,7 @@ nav li:first-child {
   overflow: hidden;
   width: 0;
   border-right: 2px solid transparent;
-  animation: typing6 0.5s steps(6) forwards, cursor 1s step-end forwards; /*12 chars per sec*/
+  animation: typing7 0.5s steps(6) forwards, cursor 1s step-end forwards; /*12 chars per sec*/
 }
 
 .home-name {
@@ -167,12 +167,12 @@ nav li:first-child {
   }
 }
 
-@keyframes typing6 {
+@keyframes typing7 {
   from {
     width: 0ch;
   }
   to {
-    width: 6ch;
+    width: 7ch;
   }
 }
 
