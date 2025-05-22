@@ -1,28 +1,10 @@
 from django.shortcuts import render, get_object_or_404
-from .models import UserProfile, Project, Blog, Visitor
-from django.db.models import Q
+from .models import UserProfile, Project, Blog
 # Create your views here.
 
 
 def index_view(request):
     user_profile = UserProfile.objects.first()
-
-    def get_ip(request):
-        address = request.META.get('HTTP_X_FORWARDED_FOR')
-        if address:
-            ip = address.split(',')[-1].strip()
-        else:
-            ip = request.META.get('REMOTE_ADDR')
-        return ip
-    
-    ip = get_ip(request=request)
-    v = Visitor(visitor=ip)
-    result = Visitor.objects.filter(Q(visitor__icontains=ip))
-    
-    if len(result) == 0:
-        v.save()
-
-    count = Visitor.objects.all().count()
 
     return render(request, 'main/index.html', {'user_profile': user_profile})
 

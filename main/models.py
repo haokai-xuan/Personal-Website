@@ -75,8 +75,3 @@ class Blog(models.Model):
     def __str__(self):
         return self.title
 
-
-class Visitor(models.Model):
-    visitor = models.TextField(default=None)
-    def __str__(self):
-        return self.visitor
