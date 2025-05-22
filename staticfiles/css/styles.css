@@ -130,7 +130,7 @@ nav li:first-child {
   overflow: hidden;
   width: 0;
   border-right: 2px solid transparent;
-  animation: typing 0.5s steps(6) forwards, cursor 1s step-end forwards; /*12 chars per sec*/
+  animation: typing6 0.5s steps(6) forwards, cursor 1s step-end forwards; /*12 chars per sec*/
 }
 
 .home-name {
@@ -139,7 +139,7 @@ nav li:first-child {
   overflow: hidden;
   width: 0;
   border-right: 2px solid transparent;
-  animation: typing 0.92s steps(11) forwards, cursor 1s step-end forwards;
+  animation: typing12 0.92s steps(12) forwards, cursor 1s step-end forwards;
   animation-delay: 0.5s;
 }
 
@@ -150,7 +150,7 @@ nav li:first-child {
   overflow: hidden;
   width: 0;
   border-right: 2px solid transparent;
-  animation: typing 2s steps(24) forwards, cursor 1s step-end infinite;
+  animation: typing24 2s steps(24) forwards, cursor 1s step-end infinite;
   animation-delay: 1.42s;
 }
 
@@ -167,12 +167,30 @@ nav li:first-child {
   }
 }
 
-@keyframes typing {
+@keyframes typing6 {
   from {
-    width: 0;
+    width: 0ch;
   }
   to {
-    width: 100%;
+    width: 6ch;
+  }
+}
+
+@keyframes typing12 {
+  from {
+    width: 0ch;
+  }
+  to {
+    width: 12ch;
+  }
+}
+
+@keyframes typing24 {
+  from {
+    width: 0ch;
+  }
+  to {
+    width: 24ch;
   }
 }
 
