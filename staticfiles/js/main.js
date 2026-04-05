@@ -58,7 +58,7 @@ const current_year = document.querySelector(".js-current-year");
 current_year.innerHTML = new Date().getFullYear();
 
 document.addEventListener("DOMContentLoaded", () => {
-  const cards = document.querySelectorAll(".card");
+  const cards = document.querySelectorAll(".card, .experience-card");
 
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
@@ -67,7 +67,7 @@ document.addEventListener("DOMContentLoaded", () => {
         observer.unobserve(entry.target);
       }
     })
-  }, {threshold: 0.4});
+  }, {threshold: 0.2});
 
   cards.forEach(card => observer.observe(card));
 });

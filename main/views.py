@@ -1,12 +1,16 @@
 from django.shortcuts import render, get_object_or_404
-from .models import UserProfile, Project, Blog
+from .models import UserProfile, Project, Blog, WorkExperience
 # Create your views here.
 
 
 def index_view(request):
     user_profile = UserProfile.objects.first()
+    work_experiences = WorkExperience.objects.filter(is_active=True)
 
-    return render(request, 'main/index.html', {'user_profile': user_profile})
+    return render(request, 'main/index.html', {
+        'user_profile': user_profile,
+        'work_experiences': work_experiences,
+    })
 
 
 def contact_view(request):

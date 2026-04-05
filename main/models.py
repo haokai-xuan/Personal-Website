@@ -75,3 +75,22 @@ class Blog(models.Model):
     def __str__(self):
         return self.title
 
+
+class WorkExperience(models.Model):
+    """Past internship / work entries shown on the home page."""
+
+    company_name = models.CharField(max_length=200)
+    logo = models.ImageField(upload_to='company_logos/')
+    role = models.CharField(max_length=200)
+    duration = models.CharField(max_length=120, help_text='e.g. Summer 2024 or Jan 2023 – Aug 2023')
+    location = models.CharField(max_length=200)
+    sort_order = models.PositiveIntegerField(default=0, db_index=True)
+    is_active = models.BooleanField(default=True)
+
+    class Meta:
+        ordering = ['sort_order', '-id']
+        verbose_name_plural = 'work experiences'
+
+    def __str__(self):
+        return f'{self.role} @ {self.company_name}'
+

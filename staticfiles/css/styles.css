@@ -301,6 +301,112 @@ nav li:first-child {
   object-fit: contain;
 }
 
+/* Home — internship / work experience */
+.experience-section {
+  max-width: 1000px;
+  margin: 48px auto 0;
+  padding: 0 20px;
+  box-sizing: border-box;
+}
+
+.experience-section-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #a9a9a9;
+  margin-bottom: 24px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid rgba(0, 136, 169, 0.45);
+  letter-spacing: 0.02em;
+}
+
+.experience-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+.experience-card {
+  background-color: #1b1b1b;
+  border-radius: 10px;
+  border: 1px solid rgba(211, 211, 211, 0.08);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+  opacity: 0;
+  pointer-events: none;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.experience-card.visible {
+  animation: fade-in 1s ease-out forwards;
+  pointer-events: auto;
+}
+
+.experience-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.35);
+  border-color: rgba(0, 136, 169, 0.35);
+}
+
+.experience-card-inner {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+  padding: 18px;
+}
+
+.experience-logo-wrap {
+  flex-shrink: 0;
+  width: 64px;
+  height: 64px;
+  border-radius: 10px;
+  background: #252525;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  border: 1px solid rgba(211, 211, 211, 0.06);
+}
+
+.experience-logo {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  padding: 6px;
+}
+
+.experience-body {
+  min-width: 0;
+  flex: 1;
+}
+
+.experience-company {
+  font-size: 1.1rem;
+  color: #d3d3d3;
+  margin-bottom: 6px;
+  line-height: 1.3;
+}
+
+.experience-role {
+  font-size: 0.95rem;
+  color: rgba(0, 136, 169, 1);
+  margin-bottom: 12px;
+  line-height: 1.4;
+}
+
+.experience-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 0.85rem;
+  color: rgba(211, 211, 211, 0.75);
+  line-height: 1.4;
+}
+
+.experience-meta i {
+  margin-right: 8px;
+  color: rgba(0, 136, 169, 0.85);
+  width: 1em;
+}
+
 /*Footer Styles*/
 footer {
   background-color: #111;

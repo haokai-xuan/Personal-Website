@@ -38,6 +38,37 @@
   />
   {% endif %}
 </div>
+{% if work_experiences %}
+<section class="experience-section" aria-labelledby="experience-heading">
+  <h2 id="experience-heading" class="experience-section-title">Internships</h2>
+  <div class="experience-grid">
+    {% for job in work_experiences %}
+    <article class="experience-card">
+      <div class="experience-card-inner">
+        <div class="experience-logo-wrap">
+          <img
+            class="experience-logo no-lightbox"
+            src="{{ job.logo.url }}"
+            alt="{{ job.company_name }} logo"
+            width="64"
+            height="64"
+            loading="lazy"
+          />
+        </div>
+        <div class="experience-body">
+          <h3 class="experience-company">{{ job.company_name }}</h3>
+          <p class="experience-role">{{ job.role }}</p>
+          <div class="experience-meta">
+            <span class="experience-duration"><i class="fa-regular fa-calendar" aria-hidden="true"></i> {{ job.duration }}</span>
+            <span class="experience-location"><i class="fa-solid fa-location-dot" aria-hidden="true"></i> {{ job.location }}</span>
+          </div>
+        </div>
+      </div>
+    </article>
+    {% endfor %}
+  </div>
+</section>
+{% endif %}
 <div class="section">
   <img class="section-content" src="https://github-readme-stats-git-master-haokai-xuans-projects.vercel.app/api?username=haokai-xuan&show_icons=true&theme=shadow_blue" />
   <img class="section-content" src="https://github-readme-streak-stats-ruby-eight.vercel.app?user=haokai-xuan&theme=shadow-blue&card_width=467" alt="GitHub Streak" />
