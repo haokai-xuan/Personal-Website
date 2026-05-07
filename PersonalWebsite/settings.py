@@ -29,6 +29,11 @@ SECRET_KEY = os.getenv("DJANGO_SECRET_KEY")
 DEBUG = False
 
 ALLOWED_HOSTS = ['*']
+# Include apex and www so POSTs (e.g. contact/admin) pass CSRF checks from either host.
+CSRF_TRUSTED_ORIGINS = [
+    "https://haokai-xuan.com",
+    "https://www.haokai-xuan.com",
+]
 
 SECURE_REFERRER_POLICY = "no-referrer-when-downgrade"
 
@@ -141,7 +146,8 @@ USE_TZ = True
 
 # Where collectstatic will copy all static files
 STATIC_ROOT = os.path.join(BASE_DIR, 'static_collected')
-STATIC_URL = 'static/'
+# Leading slash: URLs must be root-relative so nested pages (e.g. /blog/slug/) load assets correctly.
+STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'staticfiles'),  # Static files location in the root directory
 ]
