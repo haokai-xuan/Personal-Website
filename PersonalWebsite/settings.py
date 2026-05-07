@@ -25,8 +25,10 @@ load_dotenv(dotenv_path=BASE_DIR / ".env")
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = os.getenv("DJANGO_SECRET_KEY")
 
-# SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+# SECURITY WARNING: never set DJANGO_DEBUG in production. Local: DJANGO_DEBUG=1 in .env.
+DEBUG = os.getenv("DJANGO_DEBUG", "").strip().lower() in ("1", "true", "yes")
+# With DEBUG off, static files only come from STATIC_ROOT after collectstatic (see build.sh).
+WHITENOISE_USE_FINDERS = DEBUG
 
 ALLOWED_HOSTS = ['*']
 # Include apex and www so POSTs (e.g. contact/admin) pass CSRF checks from either host.
@@ -70,6 +72,7 @@ CKEDITOR_CONFIGS = {
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',

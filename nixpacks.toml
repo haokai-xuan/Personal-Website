@@ -1,0 +1,3 @@
+# Railway / Nixpacks: run collectstatic after the Python provider’s install step.
+[phases.build]
+cmds = ["...", "python manage.py collectstatic --noinput"]
