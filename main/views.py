@@ -40,7 +40,7 @@ def blog_details_view(request, slug):
 
 
 def handle_404(request, exception):
-    return render(request, "main/404.html", {})
+    return render(request, "main/404.html", status=404)
 
 
 def star_system_simulation_view(request):

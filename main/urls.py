@@ -1,4 +1,5 @@
-from django.urls import path
+from django.urls import path, re_path
+from django.views.static import serve
 from .views import *
 from django.conf import settings
 from django.conf.urls.static import static
@@ -11,4 +12,13 @@ urlpatterns = [
     path('blogs/', blogs_list_view, name='blogs_list'),
     path('blogs/<slug:slug>/', blog_details_view, name='blog_detail'),
     path('star_system_simulation/', star_system_simulation_view, name='star_system_simulation'),
-] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+]
+
+# django.conf.urls.static.static only registers routes when DEBUG=True; production needs /media/ too.
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+else:
+    media_url = settings.MEDIA_URL.lstrip('/')
+    urlpatterns += [
+        re_path(rf'^{media_url}(?P<path>.*)$', serve, {'document_root': settings.MEDIA_ROOT}),
+    ]
