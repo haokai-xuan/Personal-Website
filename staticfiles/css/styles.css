@@ -317,6 +317,12 @@ nav li:first-child {
   padding-bottom: 10px;
   border-bottom: 2px solid rgba(0, 136, 169, 0.45);
   letter-spacing: 0.02em;
+  opacity: 0;
+  will-change: opacity, transform;
+}
+
+.experience-section-title.visible {
+  animation: fade-in 1s ease-out forwards;
 }
 
 .experience-grid {
