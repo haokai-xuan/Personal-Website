@@ -102,13 +102,28 @@ TEMPLATES = [
 WSGI_APPLICATION = 'PersonalWebsite.wsgi.application'
 
 
+# Database & uploaded media on persistent disk (e.g. Railway volume).
+# Local: leave DJANGO_DATA_DIR unset → project-root db.sqlite3 and ./media (unchanged).
+# Production: mount a volume and set DJANGO_DATA_DIR to that path (e.g. /data).
+_persist_dir = os.getenv("DJANGO_DATA_DIR", "").strip()
+if _persist_dir:
+    _persist_path = Path(_persist_dir)
+    _persist_path.mkdir(parents=True, exist_ok=True)
+    _sqlite_path = _persist_path / "db.sqlite3"
+    _media_path = _persist_path / "media"
+    _media_path.mkdir(parents=True, exist_ok=True)
+else:
+    _sqlite_path = BASE_DIR / "db.sqlite3"
+    _media_path = BASE_DIR / "media"
+
+
 # Database
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'NAME': _sqlite_path,
     }
 }
 
@@ -157,7 +172,7 @@ STATICFILES_DIRS = [
 
 
 MEDIA_URL = '/media/'
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_ROOT = os.fspath(_media_path)
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
